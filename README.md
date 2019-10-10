@@ -1,1 +1,2 @@
 # JavascriptLeanring
+用作学习整理,也算作记录一下自己的学习情况
