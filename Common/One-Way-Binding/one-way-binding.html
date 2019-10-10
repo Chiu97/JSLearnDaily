@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>One Way Binding/单向绑定</title>
+</head>
+<body>
+  <div data-binding="quote"></div>
+  <script>
+
+      document.querySelector('[data-binding="quote"]').innerHTML = 'Either you run the day, or the day runs you.';
+      var handler = {
+        set: function(obj, prop, value) {
+          console.log('set');
+          obj[prop] = value;
+          render(value);
+          console.log('value:' + value);
+        }
+      }
+      const render= function(value) {
+        document.querySelector('[data-binding="quote"]').innerHTML = value;
+      }
+      function createState() {
+        return new Proxy({quote:'Either you run the day, or the day runs you.'},handler);
+      }
+      let state = createState();
+      console.log('Script done.');
+    </script>
+</body>
+</html>

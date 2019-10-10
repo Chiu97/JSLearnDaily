@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <label >Number1:</label>
+    <input id="in1"/>
+  </div>
+  <div>
+    <label>Number2:</label>
+    <input id="in2"/>
+  </div>
+  <div>
+    <p id="display"></p>
+  </div>
+
+  <script>
+    let in1 = document.querySelector('#in1');
+    let in2 = document.querySelector('#in2');
+    let display = document.querySelector('#display');
+    let handler = {
+      set: function(obj, prop, value) {
+        syncText(value);
+        obj[prop] = value;
+      }
+    }
+    let createState = function() {
+      return new Proxy({textContent:''},handler);
+    }
+    let state = createState();
+    let in1Change = function(e) {
+      in2.value = e.target.value;
+      display.textContent = e.target.value;
+      state['textContent'] = e.target.value;
+    }
+    let in2Change = function(e) {
+      in1.value = e.target.value;
+      display.textContent = e.target.value;
+      state['textContent'] = e.target.value;
+    }
+    in1.addEventListener('keyup', in1Change);
+    in2.addEventListener('keyup', in2Change);
+    function syncText(text) {
+      in1.value = text;
+      in2.value = text;
+      display.textContent = text;
+    }
+  </script>
+</body>
+</html>
