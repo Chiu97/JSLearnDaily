@@ -1,0 +1,22 @@
+{
+  "name": "js-learning",
+  "version": "1.0.0",
+  "description": "用作学习整理,也算作记录一下自己的学习情况",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chiu97/JavascriptLeanring.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chiu97/JavascriptLeanring/issues"
+  },
+  "homepage": "https://github.com/Chiu97/JavascriptLeanring#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
