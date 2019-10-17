@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border: dashed 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <label>input</label>
+    <input id='in'/>
+    <div class="display-wrapper">
+      <span class="display-text" id="display"></span>
+    </div>
+  </div>
+  <script>
+      let elIn = document.querySelector('#in');
+      let elDisplay = document.getElementById('display');
+      let state = {text:''};
+      elDisplay.textContent = state.text;
+      Object.defineProperty(state, 'text', {
+        set(value) {
+          elDisplay.textContent = value;
+        }
+      });
+      const keyupHandler = function(e) {
+        state.text = e.target.value;
+      }
+      elIn.addEventListener('keyup',keyupHandler);
+    </script>
+</body>
+</html>

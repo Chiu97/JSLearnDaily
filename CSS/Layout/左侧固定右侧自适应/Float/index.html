@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      border: 1px dashed #666;
+      position: relative;
+    }
+    .left {
+      width: 140px;
+      float: left;
+      background: #eee;
+      height: 200px;
+
+    }
+    .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 140px;
+      height: 100%;
+      /* width: calc(100% - 140px); */
+      background: #808080;
+    }
+    /*清除浮动*/
+    .clearfix::after {
+      content: '';
+      height: 0;
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper clearfix">
+    <div class="left">
+      这是左侧
+    </div>
+    <div class="right">
+      这是右侧
+    </div>
+  </div>
+</body>
+</html>
