@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .isosceles-triangle {
+      width: 0px;
+      height: 0px;
+      border: 50px solid;
+      border-top-color: rgba(0,0,0,0);
+      border-left-color: rgba(0,0,0,0);
+      border-right-color: rgba(0,0,0,0);
+    }
+    
+    .right-angle-triangle {
+      width: 0px;
+      height: 0px;
+      border: 50px solid;
+      border-left-color: rgba(0,0,0,0);
+      border-top-color: rgba(0,0,0,0);
+    }
+
+    .isosceles-trapezoid {
+      width: 100px;
+      height: 0px;
+      border: 50px solid rgba(0,0,0,0);
+      border-bottom-color: #808080;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: red;
+    }
+
+    .parallelogram {
+      width: 100px;
+      height: 50px;
+      background-color: green;
+      transform: skew(20deg);
+      margin-left: 100px;
+    }
+    .heart {
+      position: relative;
+      width: 100px; 
+      height: 90px;
+      border: 4px dashed;
+    }
+    .heart:before,
+    .heart:after {
+      position: absolute;
+      content: "";
+      left: 50px; 
+      top: 0;
+      width: 50px; 
+      height: 80px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="isosceles-triangle"></div>
+  <div class="right-angle-triangle"></div>
+  <div class="isosceles-trapezoid"></div>
+  <div class="circle"></div>
+  <div class="parallelogram"></div> 
+  <div class="heart"></div>
+</body>
+</html>

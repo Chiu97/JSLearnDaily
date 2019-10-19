@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>结合绝对定位使用CSS里的transfrom属性</title>
+  <style>
+    .wrapper {
+      border: 1px dashed green;
+      width: 200px;
+      height: 200px;
+    }
+    .center {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+    .wrapper {
+      position: relative;
+    }
+    .center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="center"></div>
+  </div>
+</body>
+</html>

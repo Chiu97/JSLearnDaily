@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>父子元素宽度未知,将margin左右设置为auto</title>
+  <style>
+    .wrapper {
+      border: 1px dashed green;
+      width: 200px;
+      height: 200px;
+    }
+    .center {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+    .center {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="center"></div>
+  </div>
+</body>
+</html>
