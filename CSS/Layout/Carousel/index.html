@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>轮播图</title>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+<body>
+  <ul class="carousel-container">
+    <li class="picli"><img class="c-image image1" src="./pic/1.jpg"/></li>
+    <li class="picli"><img class="c-image image1" src="./pic/2.jpg"/></li>
+    <li class="picli"><img class="c-image image1" src="./pic/3.jpg"/></li>
+    <li class="picli"><img class="c-image image1" src="./pic/4.jpg"/></li>
+  </ul>
+  <div class="prev" onclick="show(-1)"></div>
+  <div class="next" onclick="show(1)"></div>
+
+  <script>
+    const listall = document.querySelectorAll('ul li');
+    let index = 0;
+    window.show = function(oper) {
+      index = Math.min(Math.max(0,index+oper),listall.length-1);
+      listall[index].scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>

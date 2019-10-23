@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <button class="open-popup">
+      Open Popup
+    </button>
+    <div class="popup">
+      <div class="popup-content">
+        here is the popup content
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popup = document.querySelector('.popup');
+    const openBtn = document.querySelector('.open-popup');
+
+    openBtn.addEventListener('click',function(e) {
+      e.preventDefault();
+      popup.classList.add('open');
+    });  
+
+    popup.addEventListener('click',function(e) {
+      e.target.isEqualNode(popup) && popup.classList.remove('open')
+    })
+  </script>
+</body>
+</html>

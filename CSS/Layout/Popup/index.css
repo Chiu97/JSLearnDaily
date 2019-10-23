@@ -1,0 +1,43 @@
+.wrapper {
+  position: relative;
+  background-color: yellow;
+  width: 100vw;
+  height: 100vh;
+}
+
+.open-popup {
+  margin-left: 50vw;
+  margin-top: 100px;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  background-color: #FFFFFF;
+  color: Black;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: #FFFFFF;
+  height: 200px;
+  line-height: 200px;
+  cursor: pointer;
+}
+
+.popup.open {
+  display: block;
+}
