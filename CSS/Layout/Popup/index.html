@@ -25,11 +25,13 @@
 
     openBtn.addEventListener('click',function(e) {
       e.preventDefault();
-      popup.classList.add('open');
+      // popup.classList.add('open');
+      popup.setAttribute('style','display:block')
     });  
 
     popup.addEventListener('click',function(e) {
-      e.target.isEqualNode(popup) && popup.classList.remove('open')
+      // e.target.isEqualNode(popup) && popup.classList.remove('open')
+      e.target.isEqualNode(popup) && popup.setAttribute('style','display:none');
     })
   </script>
 </body>
