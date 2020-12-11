@@ -1,0 +1,20 @@
+.draggable{
+    height: 100px;
+    background-color: blue;
+    cursor: grab;
+    border: 2px solid green;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.draggable.dragging {
+    background-color: gold;
+}
+
+.dropit {
+    height: 300px;
+    margin: 20px 0;
+    background-color: brown;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanillas JS Drap and Drop</title>
+    <link href="./index.css" rel="stylesheet"/>
+    <script src="./main.js" async></script>
+</head>
+<body>
+    <div class="big-panel" ondragover="allowDrop(event)">
+        <div class="draggable" data-id="draggable-1" draggable="true" ondrop="handleDrop(event)">
+            you can drag this component
+        </div>
+        <div class="draggable" data-id="draggable-2" draggable="true" ondrop="handleDrop(event)">
+            you can drag this component
+        </div>
+        <div class="draggable" data-id="draggable-3" draggable="true" ondrop="handleDrop(event)">
+            you can drag this component
+        </div>
+        <div draggable="true" ondrop="handleDrop(event)">
+            <div class="dropit" draggable="true">
+                put it down!!!
+            </div>
+            <div class="dropit" draggable="true">
+                put it down!!!
+            </div>
+            <div class="dropit" draggable="true">
+                put it down!!!
+            </div>
+            <div class="dropit" draggable="true">
+                put it down!!!
+            </div>
+        </div>
+    </div>
+</body>
+</html>
