@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border: 0; }
+  .main-container.container--hide-loading {
+    transform: translateY(-108px); }
+  .main-container.container--show-loading {
+    transform: translateY(0); }
+  .main-container > .loading {
+    height: 100px;
+    background-color: cadetblue; }
+  .main-container > .item {
+    height: 200px;
+    margin-bottom: 30px;
+    background-color: chocolate; }

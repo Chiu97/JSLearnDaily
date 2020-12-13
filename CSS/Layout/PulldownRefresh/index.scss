@@ -1,0 +1,24 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    border: 0;
+    &.container--hide-loading {
+        transform: translateY(-108px);
+    }
+
+    &.container--show-loading {
+        transform: translateY(0);
+    }
+
+    &>.loading {
+        height: 100px;
+        background-color: cadetblue;
+    }
+
+    &>.item {
+        height: 200px;
+        margin-bottom: 30px;
+        background-color: chocolate;
+    }
+}
