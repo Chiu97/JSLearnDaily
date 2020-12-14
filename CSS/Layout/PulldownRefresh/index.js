@@ -32,7 +32,6 @@ function hideLoading () {
  * @param {TouchEvent} e
  */
 function handleTouchStart(e) {
-    console.log({e})
     const { screenX, screenY } = e.touches[0]
     updateTouchStartPoint(screenX, screenY)
 }
@@ -62,35 +61,13 @@ function doTouchMoveTask (moveLen) {
     }
 }
 
-// var debounceHandleTouchMove = debounce(handleTouchMove, 100)
-
 /**
  * @param {TouchEvent} e
  */
 function handleTouchEnd(e) {
     hideLoading()
-    console.log({
-        touchEndEvent: e
-    })
 }
 
 document.addEventListener('touchstart', handleTouchStart, false)
 document.addEventListener('touchmove', handleTouchMove, false)
 document.addEventListener('touchend', handleTouchEnd, false)
-
-// /**
-//  * debounce function
-//  * @param {Function} fn
-//  * @param {number} interval
-//  */
-// function debounce(fn, interval) {
-//     let timeout = null
-
-//     return (...args) => {
-//         if (timeout) clearTimeout(timeout)
-//         timeout = setTimeout(() => {
-//             fn.apply(null, args)
-//             clearTimeout(timeout)
-//         }, interval)
-//     }
-// }
