@@ -25,6 +25,8 @@ function bucketSort (arr: number[]) {
     
     // inner sort
     buckets.forEach(bucket => insertionSort(bucket))
+
+    // gather
     return buckets.reduce((acc, cv) => acc.concat(cv) ,[])
 }
 
