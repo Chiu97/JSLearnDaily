@@ -1,8 +1,5 @@
 const assert = require('assert')
-
-const isObject = (val: unknown) => typeof val === 'object' && val !== null
-const copyObject = (val: any) => Array.isArray(val) ? [...val] : Object.assign({}, val)
-const createArray = <T>(length: number, initialVal: T) => Array.from({length}, () => isObject(initialVal) ? copyObject(initialVal) : initialVal)
+import { createArray, copyObject } from './utils'
 
 /**
  * @description bucket sort
@@ -51,3 +48,5 @@ function insertionSort (arr: number[]) {
 var testArr = [0, 100, 31, 2, 42, 30, 30]
 const result = bucketSort(testArr)
 assert.deepEqual(result, copyObject(testArr).sort((a, b) => a - b), 'expected two array with same order')
+
+export default bucketSort
