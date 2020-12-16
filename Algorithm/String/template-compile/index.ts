@@ -1,9 +1,5 @@
 const assert = require('assert')
 
-interface String {
-    replaceAll: (RegExp, string) => string
-}
-
 const getAllObjPathRegex = /{{([\w.]+)?}}/g
 /**
  * 编译模板, 并且用数据对象的属性值替换
