@@ -21,10 +21,8 @@ function intToRoman(num: number): string {
     let res = ''
 
     for (let v of chars) {
-        console.log({v})
         let [oneR, fiveR, oneTen] = RomanPairs.pop()
         res = bitRomanTransform(oneR, fiveR, oneTen, parseInt(v)) + res
-        console.log(res)
     }
 
     return res
