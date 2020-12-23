@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas 绘制一个简单的三角形</title>
+    <style>
+        #triangle-canvas {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500px" height="500px" id="triangle-canvas"></canvas>
+
+    <script>
+        /**
+         * @type {HTMLCanvasElement}
+         */
+        let canvasEl
+        canvasEl = document.querySelector('#triangle-canvas')
+        console.log(canvasEl)
+        const sideLen = 200
+        const canvasW = 500
+        const canvasH = 500
+        const lineWidth = 10
+        const circleR = Math.sqrt(3)/3*sideLen
+        const pA = [canvasW/2-sideLen/2, canvasH/2+circleR/2]
+        const pB = [canvasW/2, canvasH/2-circleR]
+        const pC = [canvasW/2+sideLen/2, canvasH/2+circleR/2]
+        const ctx = canvasEl.getContext('2d')
+        ctx.fillStyle = '#FFA500'
+        ctx.beginPath()
+        ctx.moveTo(...pA)
+        ctx.lineTo(...pB)
+        ctx.lineTo(...pC)
+        ctx.closePath()
+        ctx.lineWidth = lineWidth
+        ctx.stroke()
+    </script>
+</body>
+</html>
