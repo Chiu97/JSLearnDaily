@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Socket Demo1
+    </title>
+</head>
+<body>
+    <script>
+        var socket = new WebSocket('ws://localhost:9192')
+
+        socket.addEventListener('open', function (event) {
+            console.log('Connect With Server')
+            console.log(event)
+        })
+
+        setInterval(() => {
+            socket.send('Hello, dude. Random Number:' + Math.floor(Math.random()*10))
+        }, 4000)
+
+        socket.onmessage = ((msg) => {
+            console.log('receive message from [server]')
+            console.log(msg.data)
+            console.log(msg)
+        })
+    </script>
+</body>
+</html>
