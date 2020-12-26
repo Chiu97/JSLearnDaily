@@ -30,3 +30,4 @@ const testCase = [
 
 const actualOutput = findContentChildren(testCase[0], testCase[1])
 assert.equal(actualOutput, 2, 'It shoud returns the right children number')
+export {}
