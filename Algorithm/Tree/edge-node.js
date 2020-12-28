@@ -97,7 +97,7 @@ function main(head) {
   return res;
 }
 
-class Node {
+class CustomNode {
   constructor(value) {
     this.left = null;
     this.right = null;
@@ -105,10 +105,10 @@ class Node {
   }
 }
 
-let node0 = new Node(1);
-let node1 = new Node(2);
-let node2 = new Node(3);
-let node3 = new Node(4);
+let node0 = new CustomNode(1);
+let node1 = new CustomNode(2);
+let node2 = new CustomNode(3);
+let node3 = new CustomNode(4);
 node0.left = node1;
 node0.right = node2;
 node1.right = node3;

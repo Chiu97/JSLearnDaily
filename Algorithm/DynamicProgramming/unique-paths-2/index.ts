@@ -45,3 +45,4 @@ const expectedOutput = 2
 const testResult = uniquePathsWithObstacles(obstacleGrid)
 const assert = require('assert')
 assert.equal(testResult, expectedOutput, 'The output should be same')
+export {}
