@@ -40,3 +40,5 @@ var isHappy = function(n) {
 let n = 83;
 let res = isHappy(n);
 console.log(res);
+
+module.exports = {}

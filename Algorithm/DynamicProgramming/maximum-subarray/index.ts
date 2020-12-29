@@ -18,3 +18,4 @@ function maxSubArray(nums: number[]): number {
 const testCase = [-2,1,-3,4,-1,2,1,-5,4]
 const output = maxSubArray(testCase)
 console.log(output)
+export {}
