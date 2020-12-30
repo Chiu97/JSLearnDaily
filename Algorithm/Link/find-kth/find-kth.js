@@ -1,7 +1,7 @@
 // 寻找链表倒数第N个元素  
 class LinkNode {
   constructor(value) {
-    this.value = value;
+    this.val = value;
     this.next = null;
   }  
 }
