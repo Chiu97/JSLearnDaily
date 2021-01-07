@@ -1,5 +1,5 @@
-import { filter, map } from 'rxjs/operators'
-import { of } from 'rxjs'
+import { filter, map, take } from 'rxjs/operators'
+import { combineLatest, interval, of } from 'rxjs'
 
 export function TestPipe() {
     const source_ofNum = of(1, -3, 4, 5, 7, -2)
@@ -17,4 +17,13 @@ export function TestPipe() {
     source_positiveDoubleNums.forEach(logOps)
 }
 
+export function TestCombine() {
+    const source_delay75 = interval(75).pipe(take(5))
+    const source_delay100 = interval(100).pipe(take(5))
+
+    const source_combine = combineLatest([source_delay75, source_delay100])
+    source_combine.subscribe(v => console.log(v))
+}
+
 TestPipe()
+TestCombine()
