@@ -6,7 +6,11 @@ export function simulateHttp(val: any, ms:number) {
 }
 
 export function TestSimulateHttp() {
-    simulateHttp(100, 1000).subscribe(v => console.log('v:',v))
+    simulateHttp(100, 1000).subscribe(
+        v => console.log('v:',v), 
+        () => {}, 
+        () => {console.log('completed')}
+    )
 }
 
 TestSimulateHttp()
