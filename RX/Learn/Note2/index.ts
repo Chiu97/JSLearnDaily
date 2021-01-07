@@ -1,15 +1,22 @@
 import { fromEvent } from "rxjs"
-import { take } from "rxjs/operators"
+import { map } from 'rxjs/operators'
 
 function subscribeToTheRXButton () {
     const btn: HTMLButtonElement = document.querySelector('#rx-source-button')
+    const counterDisplay: HTMLSpanElement =document.querySelector('#rx-counter-display')
+    if (!btn||!counterDisplay) return
     let counter = 0
-    if (!btn) return
 
-    const source$buttonClick = fromEvent(btn, 'click') 
-    const subscription$buttonClick = source$buttonClick.pipe(take(3)).subscribe(event => {
-        console.log(event)
-        if (++counter>3) subscription$buttonClick.unsubscribe()
+    const counterIOTAStram = fromEvent(btn, 'click').pipe(map(_ => counter++))
+    counterIOTAStram.subscribe({
+        next: counterNum => {
+            console.log(counterNum)
+            counterDisplay.innerText = '' + counter
+        },
+        error: err => {
+            console.log('get err:', err)
+        },
+        complete: () => console.log('Tt is now stream complete')
     })
 }
 

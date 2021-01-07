@@ -4,14 +4,20 @@ var rxjs_1 = require("rxjs");
 var operators_1 = require("rxjs/operators");
 function subscribeToTheRXButton() {
     var btn = document.querySelector('#rx-source-button');
-    var counter = 0;
-    if (!btn)
+    var counterDisplay = document.querySelector('#rx-counter-display');
+    if (!btn || !counterDisplay)
         return;
-    var source$buttonClick = rxjs_1.fromEvent(btn, 'click');
-    var subscription$buttonClick = source$buttonClick.pipe(operators_1.take(3)).subscribe(function (event) {
-        console.log(event);
-        if (++counter > 3)
-            subscription$buttonClick.unsubscribe();
+    var counter = 0;
+    var source$buttonClick = rxjs_1.fromEvent(btn, 'click').pipe(operators_1.map(function (_) { return counter++; }));
+    source$buttonClick.subscribe({
+        next: function (event) {
+            console.log(event);
+            counterDisplay.innerText = '' + counter;
+        },
+        error: function (err) {
+            console.log('get err:', err);
+        },
+        complete: function () { return console.log('Tt is now stream complete'); }
     });
 }
 subscribeToTheRXButton();
